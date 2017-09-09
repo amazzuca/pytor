@@ -84,7 +84,7 @@ class pytor:
 		self._checkIdentityTime()
 		r = requests.get(url, stream = True, proxies = self._proxies)
 		with open(file, 'wb') as local_file:
-			for chunk in r.iter_content ( chunk_size = 1024)
+			for chunk in r.iter_content ( chunk_size = 1024):
 				if chunk:
 					local_file.write(chunk)
 		self._last_request = url
